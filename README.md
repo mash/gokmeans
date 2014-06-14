@@ -1,4 +1,4 @@
-kmeans
+gokmeans
 ======
 
 A Go (golang) package that implements the K-means clustering algorithm.
