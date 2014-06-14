@@ -1,3 +1,5 @@
+// Gokmeans is a simple k-means clusterer that determines centroids with the Train function,
+// and then classifies additional observations with the Nearest function.
 package gokmeans
 
 import (
@@ -5,12 +7,12 @@ import (
 	"time"
 )
 
-// Node represents a point in n-dimensional space, or a list of features
+// Node represents an observation of floating point values
 type Node []float64
 
 // Train takes an array of Nodes (observations), and produces as many centroids as specified by
 // clusterCount. It will stop adjusting centroids after maxRounds is reached. If there are less
-// observations than the number of centroids requested, then Train will return false, nil.
+// observations than the number of centroids requested, then Train will return (false, nil).
 func Train(Nodes []Node, clusterCount int, maxRounds int) (bool, []Node) {
 	if int(len(Nodes)) < clusterCount {
 		return false, nil
