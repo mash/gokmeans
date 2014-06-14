@@ -5,8 +5,12 @@ import (
 	"time"
 )
 
+// Node represents a point in n-dimensional space, or a list of features
 type Node []float64
 
+// Train takes an array of Nodes (observations), and produces as many centroids as specified by
+// clusterCount. It will stop adjusting centroids after maxRounds is reached. If there are less
+// observations than the number of centroids requested, then Train will return false, nil.
 func Train(Nodes []Node, clusterCount int, maxRounds int) (bool, []Node) {
 	if int(len(Nodes)) < clusterCount {
 		return false, nil
@@ -61,6 +65,7 @@ func Train(Nodes []Node, clusterCount int, maxRounds int) (bool, []Node) {
 	return true, centroids
 }
 
+// equal determines if two nodes have the same values.
 func equal(node1, node2 Node) bool {
 	if len(node1) != len(node2) {
 		return false
@@ -75,6 +80,7 @@ func equal(node1, node2 Node) bool {
 	return true
 }
 
+// Nearest return the index of the closest centroid from nodes
 func Nearest(in Node, nodes []Node) int {
 	count := len(nodes)
 
@@ -102,6 +108,7 @@ func Nearest(in Node, nodes []Node) int {
 	return mindex
 }
 
+// Distance determines the square Euclidean distance between two nodes
 func distance(node1 Node, node2 Node) float64 {
 	length := len(node1)
 	squares := make(Node, length, length)
@@ -126,6 +133,8 @@ func distance(node1 Node, node2 Node) float64 {
 	return sum
 }
 
+// meanNode takes an array of Nodes and returns a node which represents the average
+// value for the provided nodes. This is used to center the centroids within their cluster.
 func meanNode(values []Node) Node {
 	newNode := make(Node, len(values[0]))
 
@@ -142,6 +151,8 @@ func meanNode(values []Node) Node {
 	return newNode
 }
 
+// wait stops a function from continuing until the provided channel has processed as
+// many items as there are dimensions in the provided Node.
 func wait(c chan int, values Node) {
 	count := len(values)
 
