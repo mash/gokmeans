@@ -1,4 +1,4 @@
-package kmeans
+package gokmeans
 
 import (
 	"math/rand"
