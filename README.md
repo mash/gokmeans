@@ -12,7 +12,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/mdesenfants/kmeans"
+	"github.com/mdesenfants/gokmeans"
 )
 
 var observations []kmeans.Node = []kmeans.Node {
