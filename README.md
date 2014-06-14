@@ -3,6 +3,7 @@ gokmeans
 
 A Go (golang) package that implements the K-means clustering algorithm.
 
+Goroutines are used throughout to do some calulations concurrently.
 
 #### Example
 
