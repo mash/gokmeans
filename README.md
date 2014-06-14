@@ -14,7 +14,7 @@ import (
 	"github.com/mdesenfants/kmeans"
 )
 
-var observations []kmeans.Node = []kmeans.Node{
+var observations []kmeans.Node = []kmeans.Node {
 	kmeans.Node{20.0, 20.0, 20.0, 20.0},
 	kmeans.Node{21.0, 21.0, 21.0, 21.0},
 	kmeans.Node{100.5, 100.5, 100.5, 100.5},
