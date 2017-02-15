@@ -78,6 +78,11 @@ func Train(Nodes []Node, clusterCount int, maxRounds int) (bool, []Node) {
 		copy(centroids[i], Nodes[r.Intn(len(Nodes))])
 	}
 
+	return Train2(Nodes, clusterCount, maxRounds, centroids)
+}
+
+// Provide initial centroids
+func Train2(Nodes []Node, clusterCount int, maxRounds int, centroids []Node) (bool, []Node) {
 	// Train centroids
 	movement := true
 	for i := 0; i < maxRounds && movement; i++ {
