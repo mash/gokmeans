@@ -7,7 +7,7 @@ Goroutines are used throughout to do some calulations concurrently.
 
 #### Get package
 
-`go get github.com/mdesenfants/gokmeans`
+`go get github.com/mash/gokmeans`
 
 #### Example
 
@@ -16,7 +16,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/mdesenfants/gokmeans"
+	"github.com/mash/gokmeans"
 )
 
 var observations []gokmeans.Node = []gokmeans.Node {
